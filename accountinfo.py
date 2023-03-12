@@ -9,7 +9,7 @@ mydb = mysql.connector.connect(
   host="localhost",
   user="root",
   password="",
-  database="accountinfo"
+  database="indodaxapi"
 )
 
 mycursor = mydb.cursor()
@@ -37,8 +37,7 @@ data = {
     'recvWindow': '5000'
 }
 
-post_data = '&'.join([f"{k}={v}" for k, v in data.items()])
-
+post_data = '&'.join([k + '=' + v for k, v in data.items()])
 
 sign = hmac.new(secretKey.encode(), post_data.encode(), hashlib.sha512).hexdigest()
 
