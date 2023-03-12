@@ -6,7 +6,7 @@ import mysql.connector
 
 # Connect to the MySQL database
 mydb = mysql.connector.connect(
-  host="127.0.0.1",
+  host="localhost",
   user="root",
   password="",
   database="indodaxapi"
