@@ -37,7 +37,8 @@ data = {
     'recvWindow': '5000'
 }
 
-post_data = '&'.join([k + '=' + v for k, v in data.items()])
+post_data = '&'.join(['{}={}'.format(k, v) for k, v in data.items()])
+
 
 sign = hmac.new(secretKey.encode(), post_data.encode(), hashlib.sha512).hexdigest()
 
