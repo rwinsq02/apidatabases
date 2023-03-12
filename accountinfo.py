@@ -63,4 +63,4 @@ val = (balance_idr, balance_btc, balance_eth, server_time)
 mycursor.execute(sql, val)
 mydb.commit()
 
-print mycursor.rowcount, "record inserted."
+print(mycursor.rowcount, "record inserted.")
