@@ -39,6 +39,7 @@ data = {
 
 post_data = '&'.join([f"{k}={v}" for k, v in data.items()])
 
+
 sign = hmac.new(secretKey.encode(), post_data.encode(), hashlib.sha512).hexdigest()
 
 headers = {
